@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwcpgith58q6v"]
+
+[ext_resource type="Script" path="res://Fish/fish_hearts.gd" id="1_04fyl"]
+[ext_resource type="Texture2D" uid="uid://d4h72utw6dlfe" path="res://Fish/fish.png" id="2_uvtsa"]
+
+[node name="fish_hearts" type="Area2D"]
+script = ExtResource("1_04fyl")
+metadata/_edit_horizontal_guides_ = [-192.0]
+
+[node name="fish_sprite" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 1.90735e-06)
+scale = Vector2(0.04775, 0.04975)
+texture = ExtResource("2_uvtsa")
+
+[node name="fish_collision" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-7, -1, -5, -3, -2, -5, 2, -5, 6, -3, 8, -1, 8, 1, 6, 3, 3, 5, -1, 5, -5, 4, -7, 1, -8, 2, -10, 4, -11, 4, -10, 0, -11, -3, -11, -4, -10, -4)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
